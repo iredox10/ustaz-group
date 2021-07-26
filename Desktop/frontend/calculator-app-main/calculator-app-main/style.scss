@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: hsl(222, 26%, 31%);
+}
+.calc_container{
+    height: 100vh;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    .calc_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        margin-bottom: 2rem;
+        .theme{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            text-transform: uppercase;
+            input{
+                position: absolute;
+                display: none;
+            }
+            .display{
+                opacity: 0;
+            }
+            .switches{
+                background: white;
+                padding:.5rem 1rem .5rem .5rem;
+                width: 5rem;
+                border-radius: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                position: relative;
+            }
+            .switches input + label{
+                padding: .3rem;
+                position: relative;
+                cursor: pointer;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 1.3rem;
+                    height: 200%;
+                    background: red;
+                    top: -.3rem;
+                    left: 0;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .current_display{
+        width: 100%;
+        min-height: 4rem;
+        background-color: hsl(223, 31%, 20%);
+        margin: 1rem 0;
+        border-radius: 1rem;
+        padding: 1rem;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-size: 3rem;
+        color: white;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        user-select: none;
+    }
+    .prev_display{
+        display: none;
+    }
+    .calculator_main{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,minmax(70px,auto));
+        align-content: center;
+        justify-content: center;
+        gap: 1rem;
+        background: hsl(223, 31%, 20%);
+        padding: 1rem;
+        border-radius: 1rem;
+        .span{
+            grid-column: span 2;
+        }
+        .delete,.reset{
+            background: hsl(225, 21%, 49%);
+            box-shadow: 0 5px 0px 0px hsl(224, 28%, 35%);
+            color: white;
+        }
+        .equal{
+            background: hsl(6, 63%, 50%);
+            color: white;
+            box-shadow: 0 5px 0px 0px hsl(6, 70%, 34%);
+        }
+        button{
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 5px 0px 0px hsl(28, 16%, 65%);
+            text-transform: uppercase;
+            user-select: none;
+        }
+    }   
+}
+
+.white{
+    background: hsl(0, 0%, 90%);
+    .calc_header{
+        color:hsl(60, 10%, 19%) ;
+    }
+    .current_display{
+        background: hsl(0, 0%, 93%);
+        color: hsl(60, 10%, 19%);
+    }
+    .calculator_main{
+        background: hsl(0, 5%, 81%);
+        .delete,.reset{
+            background-color: hsl(185, 42%, 37%);
+        }
+        .equal{
+            background: hsl(25, 98%, 40%);
+        }
+    }
+}
+.default{
+    background:hsl(268, 75%, 9%);
+}
+.purple{
+    background: hsl(268, 75%, 9%);
+    .calc_header{
+        color:hsl(52, 100%, 62%);
+    }
+    .current_display{
+        background:  hsl(268, 71%, 12%);
+        color: hsl(52, 100%, 62%);
+    }
+    .calculator_main{
+        background:  hsl(268, 71%, 12%);
+        button{
+            background: hsl(268, 47%, 21%);
+            box-shadow: 0 5px 0px 0px  hsl(290, 70%, 36%);
+            color:hsl(52, 100%, 62%) ;
+        }
+        .delete,.reset{
+            background-color: hsl(281, 89%, 26%);
+            box-shadow: 0 5px 0px 0px  hsl(285, 91%, 52%);
+        }
+        .equal{
+            background: hsl(176, 100%, 44%);
+            box-shadow: 0 5px 0px 0px  hsl(177, 92%, 70%);
+        }
+    }
+}
