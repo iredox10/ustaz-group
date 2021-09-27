@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>registered users</title>
+</head>
+<body>
+    <%- include('./partial/header.ejs') %> 
+    <div class="container">
+    <% users.forEach(user =>  { %>
+        <table class="table table-bordered">
+            <tr>
+                <th class="bg-dark text-capitalize text-white">full name</th>
+                <th class="bg-dark text-capitalize text-white">school name</th>
+                <th class="bg-dark text-capitalize text-white">address</th>
+                <th class="bg-dark text-capitalize text-white">reg. number</th>
+                <th class="bg-dark text-capitalize text-white">email</th>
+                <th class="bg-dark text-capitalize text-white">password</th>
+            </tr>
+
+            <tr>
+                <td><%= user.fullName %> </td>
+                <td><%= user.schoolName %> </td>
+                <td><%= user.address %> </td>
+                <td><%= user.regNumber %> </td>
+                <td><%= user.email %> </td>
+                <td><%= user.password %> </td>
+            </tr>
+        </table>
+   <% }) %> 
+</div>
+</body>
+</html>

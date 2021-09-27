@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>admin page</title>
+</head>
+
+<body>
+    <%- include('./partial/header.ejs') %>
+
+        <div class="container my-5">
+            <div class="row  text-capitalize text-center">
+                <div class="col-lg-6 mb-3">
+                    <a href="/users" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>view registered users</h1>
+                            </div>
+                            <div class="card-body">
+                                <p>see the users that register to your page</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <a href="/add-article" class="text-decoration-none text-dark" >
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>add article</h1>
+                            </div>
+                            <div class="card-body">
+                                <p>add new aricles here</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6">
+                    <a href="/admin-article-page" class="text-decoration-none text-dark" >
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>view/edit/delete article</h1>
+                            </div>
+                            <div class="card-body">
+                                <p>view new aricles here</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+</body>
+
+</html>

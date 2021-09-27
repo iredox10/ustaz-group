@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>register</title>
+</head>
+<body>
+
+    <%- include('./partial/header.ejs') %>
+
+    <div class="container text-capitalize my-4">
+        <h1 class="text-capitalize text-center my-3">register now</h1>
+        <form action="/register" method="POST">
+
+        <div class="mb-3">
+          <label for="fullName" class="form-label">full name</label>
+          <input type="text" name="fullName" id="fullName" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted"></small>
+        </div>
+
+        <div class="mb-3">
+          <label for="schoolName" class="form-label">school name</label>
+          <input type="text" name="schoolName" id="schoolName" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted"></small>
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">address</label>
+          <input type="text" name="address" id="address" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted"></small>
+        </div>
+
+        <div class="mb-3">
+          <label for="regNumber" class="form-label">reg number</label>
+          <input type="text" name="regNumber" id="regNumber" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted"></small>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">email</label>
+          <input type="text" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted"></small>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">choose password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted"></small>
+        </div>
+
+        <button class="btn btn-outline-dark form-control text-capitalize">register</button>
+        </form>
+    </div>
+</body>
+</html>

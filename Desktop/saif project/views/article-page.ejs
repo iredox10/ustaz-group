@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>steps page</title>
+</head>
+<body>
+    <%- include('./partial/header.ejs') %>
+    <div class="container">
+
+    <h1>page for the whole steps</h1>
+    <% articles.forEach(article => { %>
+        <div class="card">
+            <div class="card-header">
+                <h1><%= article.title %> </h1>
+            </div>
+            <div class="card-body">
+                <p><%= article.articleBody.slice(0,200) %>  ... </p>
+                <a href="/article-detail/<%= article.id %> " class="btn btn-outline-secondary text-capitalize">read more</a>
+            </div>
+        </div>  
+  <%  }) %> 
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>log in</title>
+</head>
+<body>
+    
+    <%- include('./partial/header.ejs') %>
+
+    <div class="container text-capitalize">
+        <h1 class="text-capitalize text-center my-3">log in</h1>
+        <form action="/log-in" method="POST">
+
+        <div class="mb-3">
+            <label for="email" class="form-label">email</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted"></small>
+        </div>
+        
+        <div class="mb-3">
+            <label for="password" class="form-label"> password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted"></small>
+        </div>
+        <button class="btn btn-outline-dark text-capitalize">log in</button>
+        </form>
+    </div>
+</body>
+</html>
