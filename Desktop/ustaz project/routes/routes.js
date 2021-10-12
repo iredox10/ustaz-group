@@ -1,17 +1,26 @@
 const {Router} = require('express')
 const route = Router()
 const controller = require('../controller/controller')
+const user = require('../model/sign-up')
 
-// sign in route
-route.get('/sign-in',controller.get_log )
-route.get('/sign-up',controller.post_log )
+// home page
+route.get('/', (req, res) => {
+	res.render('home');
+});
 
-// sign up route
 route.post('/sign-up', controller.post_sign)
+route.get('/admin', controller.admin)
+route.get('/sign-in',controller.get_log )
 
-// single user 
-route.get('/:id', controller.get_user)
+route.get('/booking/:id', controller.get_booking_page)
+route.patch('/booking/:id', controller.post_booking_page)
 
-// booking route
-route.get('/booking', controller.get_booking_page)
+route.get('/user/:id', controller.get_user)
+
+
+route.delete('/admin/:id',controller.delete_user)
+
+route.post('/sign-in', controller.post_log)
+
+
 module.exports = route

@@ -15,19 +15,22 @@ header {
   padding: 1.5rem;
   background: white;
 }
+
 header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 header nav ul {
   display: flex;
   list-style: none;
 }
+
 header nav ul li a {
   text-transform: capitalize;
   text-decoration: none;
-  padding: 0.5rem;
+  padding: .5rem;
 }
 
 .main {
@@ -41,43 +44,51 @@ header nav ul li a {
   gap: 3rem;
   padding: 1rem 0;
 }
+
 .main .text {
   color: white;
 }
+
 .main form {
   display: flex;
   flex-direction: column;
   background: white;
   box-shadow: 0 10px 8px 5px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
+  padding: .5rem;
   border-radius: 5px;
 }
+
 .main form h1 {
-  margin: 0.5rem 0;
+  margin: .5rem 0;
 }
+
 .main form div {
-  margin: 0.3rem 0;
+  margin: .3rem 0;
 }
+
 .main form label {
   font-weight: bold;
   margin: 1rem 0;
 }
-.main form input:not([type=radio]), .main form textarea, .main form button {
+
+.main form input:not([type="radio"]), .main form textarea, .main form button {
   width: 100%;
   text-transform: capitalize;
   font-size: 1.2rem;
-  margin: 0.2rem 0;
-  padding: 0.1rem;
+  margin: .2rem 0;
+  padding: .1rem;
   font-family: inherit;
 }
+
 .main form button {
   border: none;
   background-color: #cf4109;
   color: white;
   cursor: pointer;
 }
+
 .main form button:hover {
-  opacity: 0.5;
+  opacity: .5;
 }
 
 @media (min-width: 900px) {
@@ -97,10 +108,7 @@ header nav ul li a {
   .main .text p {
     font-size: 1.3rem;
   }
-
   form {
     flex-basis: 40%;
   }
 }
-
-/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>staff page </title>
+    <style>
+        .detail{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+        span{
+            font-weight: bold;
+            margin-right: .5rem;
+
+        }
+        .container{
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container p{
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin: .5rem 0;
+        }
+        .details{
+            text-align: center;
+            text-transform: capitalize;
+            text-decoration: underline;
+            color: rgb(216, 66, 66);
+            margin: 1rem 0;
+        }
+        fieldset{
+            padding: .5rem;
+            border-color: rgb(216, 66, 66);
+            margin: 1rem 0;
+        }
+        legend{
+            padding: .3rem;
+            text-transform: capitalize;
+            color: rgb(216, 66, 66);
+        }
+        .profile{
+            background:rgb(216, 66, 66) ;
+            color: white;
+            padding: .5rem;
+            text-transform: capitalize;
+        }
+        .update-booking{
+            text-decoration: none;
+            text-transform: capitalize;
+            background: rgb(216, 66, 66);
+            color: white;
+            padding: .5rem;
+            margin: .5rem 0;
+            display: inline-block;
+            border-radius: inherit;
+            border-radius: .2rem;
+            transition: all .3s ease;
+        }
+        .update-booking:hover{
+            background: rgb(77, 10, 10);
+        }
+        @media (min-width:800px) {
+            .fields{
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+            fieldset{
+                width: 100%;
+            }
+        }
+        .driver-links{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+       .driver-links a{
+            text-decoration: none;
+            text-transform: capitalize;
+            background: rebeccapurple;
+            padding: .5rem;
+            color: white;
+            border-radius: .5rem;
+        }
+        .driver-links a:hover{
+            background: rgb(19, 14, 24);
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partial/header.ejs') %> 
+    <h1>welcome <%= staff.name %> </h1>
+    <div class="container">
+        <h1>staff info</h1>
+        <div class="info">
+            <p><span>staff name:</span><%= staff.name %> </p>
+            <p><span>staff email:</span><%= staff.email %> </p>
+            <p><span>staff address:</span><%= staff.address %> </p>
+            <p><span>staff gender:</span><%= staff.gender %> </p>
+            <div class="driver-links">
+            <a href="/add-driver">add driver</a>
+            <a href="/drivers">view drivers</a>
+            </div>
+        </div>
+
+        <div class="bookings">
+            <% users.forEach(user =>{%>
+                <fieldset>
+                    <legend><%= user.name%> booking </legend>
+                    <div class="detail">
+                        <div class="pick-up">
+                    <p><span>pick up date:</span>
+                        <%= user.pickDate %>
+                    </p>
+                    <p><span>pick up time:</span>
+                        <%= user.pickTime %>
+                    </p>
+                    <p><span>pick up address:</span>
+                        <%= user.pickAddress %>
+                    </p>
+                    </div>
+                    <div class="drop">
+                        <p><span>drop date:</span>
+                            <%= user.dropDate %>
+                        </p>
+                        <p><span>drop time:</span>
+                            <%= user.dropTime %>
+                        </p>
+                        <p><span>drop address:</span>
+                            <%= user.dropAddress %>
+                        </p>
+                    </div>
+                    <p><span>driver assign:</span>
+                        <%= user.driver %>
+                    </p>
+                </div>
+                <a href="/assign-driver/<%= user.id %> ">assign driver</a>
+                </fieldset>
+                
+        <%   }) %> 
+        </div>
+    </div>
+</body>
+</html>

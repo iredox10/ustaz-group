@@ -24,7 +24,18 @@ const userSchema = new mongoose.Schema({
     address:{
         type:String,
         require: true
-    }
+    },
+    pickDate : String,
+    pickTime: String,
+    pickAddress: String,
+    dropDate : String,
+    dropTime: String,
+    dropAddress: String,
+    createAt:{
+        type: Date,
+        default:Date.now()
+    },
+    driver:String
 })
 
 const user = mongoose.model('user', userSchema)

@@ -4,16 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
     <title>user page</title>
+    <style>
+        span{
+            font-weight: bold;
+            margin-right: .5rem;
+
+        }
+        .container{
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container p{
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin: .5rem 0;
+        }
+        .details{
+            text-align: center;
+            text-transform: capitalize;
+            text-decoration: underline;
+            color: rgb(216, 66, 66);
+            margin: 1rem 0;
+        }
+        fieldset{
+            padding: .5rem;
+            border-color: rgb(216, 66, 66);
+            margin: 1rem 0;
+        }
+        legend{
+            padding: .3rem;
+            text-transform: capitalize;
+            color: rgb(216, 66, 66);
+        }
+        .profile{
+            background:rgb(216, 66, 66) ;
+            color: white;
+            padding: .5rem;
+            text-transform: capitalize;
+        }
+        .update-booking{
+            text-decoration: none;
+            text-transform: capitalize;
+            background: rgb(216, 66, 66);
+            color: white;
+            padding: .5rem;
+            margin: .5rem 0;
+            display: inline-block;
+            border-radius: inherit;
+            border-radius: .2rem;
+            transition: all .3s ease;
+        }
+        .update-booking:hover{
+            background: rgb(77, 10, 10);
+        }
+        @media (min-width:800px) {
+            .fields{
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+            fieldset{
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1><%= user.name %> profile</h1>
+    <%- include('./partial/header.ejs') %> 
+    <h1 class="profile"><%= user.name %> profile</h1>
+    <div class="container">
     <div class="user-info">
     <p><span>full name:</span> <%= user.name %> </p>
     <p><span>email:</span> <%= user.email %> </p>
     <p><span>phone number:</span> <%= user.phoneNumber %> </p>
     <p><span>address:</span> <%= user.address %> </p>
+    <p><span>driver assign:</span>  <%= user.driver %> </p>
     </div>
-    <a href="/booking">book a car now</a>
+    
+    <div class="booking-detail">
+        <h1 class="details"><%= user.name %> booking details</h1>
+        <div class="fields">
+        <fieldset>
+            <legend>pick up details:</legend>
+            <p><span>pick up date:</span><%= user.pickDate %> </p>
+            <p><span>pick up time:</span><%= user.pickTime %> </p>
+            <p><span>pick up address:</span><%= user.pickAddress %> </p>
+        </fieldset>
+        <fieldset>
+            <legend>drop details</legend>
+            <p><span>drop date:</span>
+                <%= user.dropDate %>
+            </p>
+            <p><span>drop time:</span>
+                <%= user.dropTime %>
+            </p>
+            <p><span>drop address:</span>
+                <%= user.dropAddress %>
+            </p>
+        </fieldset>
+    </div>
+</div>
+<a href="/booking/<%= user.id %>" class="update-booking">update or edit booking</a>
+</div>
 </body>
 </html>

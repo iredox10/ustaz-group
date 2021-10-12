@@ -4,50 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
     <title>booking page</title>
+    <style>
+        .container{
+            padding: 1rem ;
+        }
+        .booking-container{
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            margin: 1rem auto;
+            gap: 1rem;
+        }
+        fieldset{
+            width: 100%;
+            text-transform: capitalize;
+            padding: .5rem;
+        }
+        legend{
+            padding: .5rem;
+            font-weight: bolder;
+        }
+        input{
+            padding: .7em;
+            width: 100%;
+            margin: .5rem 0;
+            font-family: inherit;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
-    <form>
-    <h1>make booking</h1>
+    <%- include('./partial/header.ejs') %>
+    <div class="container">
+    <h1><%= user.name %> make your booking here </h1>
+    <form action="/booking/<%= user.id %>?_method=PATCH" method="POST">
+        <div class="booking-container">
     <fieldset>
         <legend>pick up</legend>
         <div class="pick-date">
             <label for="pickDate">date</label>
-            <input type="date" name="pickDate">
+            <input type="date" name="pickDate" value="<%= user.pickDate %> ">
         </div>
         <div class="pick-Time">
-            <label for="pickTime">date</label>
-            <input type="time" name="pickTime">
-        </div>
-        <div class="pick-Time">
-            <label for="pickTime">date</label>
-            <input type="time" name="pickTime">
+            <label for="pickTime">time</label>
+            <input type="time" name="pickTime" value="<%= user.pickTime %> ">
         </div>
         <div class="pick-address">
-            <label for="pickAddress">date</label>
-            <input type="text" name="pickAddress">
+            <label for="pickAddress">address</label>
+            <input type="text" name="pickAddress" value="<%= user.pickAddress %> ">
         </div>
     </fieldset>
 
     <fieldset>
         <legend>drop</legend>
         <div class="drop-date">
-            <label for="dropDate">drop</label>
-            <input type="date" name="dropDate">
+            <label for="dropDate">date</label>
+            <input type="date" name="dropDate" value="<%= user.dropDate %> ">
         </div>
         <div class="drop-Time">
             <label for="dropTime">time</label>
-            <input type="time" name="dropTime">
-        </div>
-        <div class="drop-Time">
-            <label for="dropTime">date</label>
-            <input type="time" name="dropTime">
+            <input type="time" name="dropTime" value="<%= user.dropTime %> ">
         </div>
         <div class="drop-address">
-            <label for="dropAddress">date</label>
-            <input type="text" name="dropAddress">
+            <label for="dropAddress">address</label>
+            <input type="text" name="dropAddress" value="<%= user.dropAddress %> ">
         </div>
     </fieldset>
+</div>
+<button>book now</button>
     </form>
+    </div>
 </body>
 </html>

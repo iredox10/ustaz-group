@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>add employer page</title>
+    <style></style>
+</head>
+<body>
+    <%- include('./partial/header.ejs') %> 
+    <div class="main">
+        <div class="text">
+            <h1>admin add new staff</h1>
+        </div>
+    <form action="/add-employer" method="POST">
+        <div class="name">
+            <label for="name">staff name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="address">
+            <label for="address">staff address</label>
+            <input type="text" name="address" id="address">
+        </div>
+
+        <div class="gender">
+            <label for="gender">staff gender</label>
+            <input type="radio" name="gender" id="gender" value="male">
+            male
+            <input type="radio" name="gender" id="gender" value="female">
+            female
+        </div>
+        <div class="email">
+            <label for="email">staff email</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div class="password">
+            <label for="password">assign password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button>add staff</button>
+    </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>employees page</title>
+    <style>
+        .container{
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+       .top a{
+            text-decoration: none;
+            text-transform: capitalize;
+            background: rebeccapurple;
+            padding: .5rem;
+            color: white;
+            border-radius: .5rem;
+        }
+        .top a:hover{
+            background: rgb(19, 14, 24);
+        }
+          table{
+            padding: 0;
+            table-layout: fixed;
+        }
+        th,td{
+            border: 1px solid #000;
+            padding: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partial/header.ejs') %> 
+    <h1>employees page</h1>
+
+    <div class="container">
+        <div class="top">
+            <h1>employers</h1>
+            <a href="/add-employer">add staff</a>
+        </div>
+        <% staffs.forEach((staff,index) => { %>      
+            <table>
+            <tr>
+                <th>employer name</th>
+                <th>employer address</th>
+                <th>employer email</th>
+                <th>employer gender</th>
+                <th>employer password</th>
+                <th>edit/delete</th>
+            </tr>
+            <tr>
+                <td><%= staff.name %> </td>
+                <td><%= staff.address %> </td>
+                <td><%= staff.email %> </td>
+                <td><%= staff.gender %> </td>
+                <td><%= staff.password %> </td>
+                <td>
+                    <div class="edit-delete">
+                        <a href="/staff-page">view staff</a>
+                        <form action="/delete-staff/<%= staff.id %>?_method=DELETE" method="POST">
+                        <button>delete staff</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <% }) %>
+    </div>
+</body>
+</html>
